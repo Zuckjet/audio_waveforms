@@ -24,7 +24,7 @@ public class AudioRecorder: NSObject, AVAudioRecorderDelegate{
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         
-        let options: AVAudioSession.CategoryOptions = [.defaultToSpeaker, .allowBluetooth]
+        let options: AVAudioSession.CategoryOptions = [.allowBluetooth]
         if (path == nil) {
             let documentDirectory = getDocumentDirectory(result)
             let date = Date()
