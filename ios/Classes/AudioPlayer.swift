@@ -22,7 +22,7 @@ class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     
     func preparePlayer(path: String?, volume: Double?, updateFrequency: Int?,result: @escaping FlutterResult) {
         if(!(path ?? "").isEmpty) {
-            AVAudioSession.sharedInstance().setCategory(.playback)
+            try? AVAudioSession.sharedInstance().setCategory(.playback)
             self.updateFrequency = updateFrequency ?? 200
             let audioUrl = URL.init(string: path!)
             if(audioUrl == nil){
