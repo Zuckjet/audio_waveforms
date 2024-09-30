@@ -27,6 +27,7 @@ class AudioPlayer: NSObject, AVAudioPlayerDelegate {
             } else {
                 try? AVAudioSession.sharedInstance().setCategory(.playback)
             }
+            try? AVAudioSession.sharedInstance().setActive(true)
             self.updateFrequency = updateFrequency ?? 200
             let audioUrl = URL.init(string: path!)
             if(audioUrl == nil){
